@@ -106,16 +106,80 @@
 \begin{flushleft}
 	
 	
-	Denne case omhandler måden at forbedre et støjfyldt signal med et midlingsfilter. 
-	
-	
-	Denne case omhandler filtrering af et lydklip. Dette lydklip består af en mand der taler mens en tone spiller inderover. Denne tone skal filtreres fra, så det kun er er mandens stemme der er tilbage. 
-	Dette er implementeret på et Blackfin development kit. Filteret er et notch-filter, hvilket er et meget smalt filter.
+	Denne case omhandler måden at forbedre et støjfyldt signal med et midlingsfilter. Dette filter skal midle et signal fra en vægt. Typisk vil signalet fra vægten svinge voldsomt som vil gøre det svært at måle korrekt. Midlingsfilteret vil gøre det muligt at få en pålidelig måling. Filteret er realiseret ved hjælp af matlab og vægt data er importeret ind i matlab og testet i dette miljø.
 \end{flushleft}
 
 \section{Opgave 1}
 
 \section{Opgave 2}
+Det kommende afsnit kommer til at omhandle hvordan midlingsfilteret virker og hvordan det er implementeret. Filteret er blevet testet på dataen fra opgave 1. Vi har ekspermenteret med både lineært og eksponentielt midlingsfilter. 
+
+\subsection{Lineært midlingsfilter}
+For at midle data fra opgave 1, lavede vi først et lineært midlingsfilter. Dette er gjort på følgende måde:
+
+\begin{lstlisting}[frame=single]  % Start your code-block
+for i:=maxint to 0 do
+M = 10;
+h1 = 1/M * ones(1, M);
+\end{lstlisting}
+Dette laver et midlingsfilter med M koeficienter, der hver har en værdi på 1/M. Ved at indstille på ordnen(altså M) vil man kunne få filteret til midle kraftigere. \\
+
+Da dataen fra opgave 1 viser at der både er en load og noload, er filteret påført de to stadier hver for sig. Dette er blevet plottet på et histogram, som kan ses på figur \ref{fig:histogram1}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=90mm]{Img/Histogram_load_L.png}
+	\caption{Histogram af load med og uden filter. Filterorden = 10}
+	% \floatfoot{Source: (Citation command)}
+	\label{fig:histogram1}
+\end{figure}
+
+Man kan se at filteret får vores data til at ligge tættere på hinanden, hvilket er det vi gerne vil se. Det samme kan ses for noload på \ref{fig:histogram2}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=90mm]{Img/Histogram_noload_L.png}
+	\caption{Histogram af noload med og uden filter. Filterorden = 10}
+	% \floatfoot{Source: (Citation command)}
+	\label{fig:histogram2}
+\end{figure}
+
+Ved at ændre på ordnen kan man få filtret til at midle kraftigere. Dette kan ses på figur \ref{fig:histogram3}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=90mm]{Img/Histogram_load_50.png}
+	\caption{Histogram af load med og uden filter. Filterorden = 50}
+	% \floatfoot{Source: (Citation command)}
+	\label{fig:histogram3}
+\end{figure}
+
+Det ses tydligt at de orange pinde er blevet smallere og fylder et mindre område på grafen.\\
+Hvis man kigger på varians og spredning kan man se at de stemmer godt overens med vores grafer. \\
+\newpage
+
+\begin{lstlisting}[frame=single]  % Start your code-block
+for i:=maxint to 0 do
+
+var_load = var(y_load)
+var_noload = var(y_noload)
+
+P_load = (1/sqrt(M)*S_load)^2
+P_noload = (1/sqrt(M)*S_noload)^2
+\end{lstlisting}
+
+Ved M = 10 får vi en varians på ca 90, mod en varians på ca 25 ved en orden på 50. Hvis man kigger på støj-effekten ser man det samme. Ved en orden på 10 er støj-effekten ca 10 højere end ved en orden på 50.\\
+
+Hvis man ønsker en max svingningstid for sit system, bliver man muligvis nødt til at begrænse sin orden på filteret. Hvis vi har et krav om en indsvingningstid på 100ms kan vi lave en hurtigt udregning:
+
+\begin{lstlisting}[frame=single]  % Start your code-block
+for i:=maxint to 0 do
+maxKoef = fs*0.1;
+\end{lstlisting}
+
+Dette giver os et filter med en orden på 30. 
+\subsection{Eksponentielt midlingsfilter}
+
 
 \section{Opgave 3}
 

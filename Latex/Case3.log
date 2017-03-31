@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.9)  31 MAR 2017 14:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.12.9)  31 MAR 2017 15:35
 entering extended mode
 **./Case3.tex
 (Case3.tex
@@ -802,11 +802,7 @@ Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
 )
 ))
 Package hyperref Info: Option `colorlinks' set `true' on input line 27.
- (Case3.aux
-
-LaTeX Warning: Label `fig:udregn1' multiply defined.
-
-)
+ (Case3.aux)
 \openout1 = `Case3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -823,7 +819,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 33.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 33.
@@ -926,7 +922,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Img/logo.jpg, id=30, 454.69875pt x 116.68594pt>
+<Img/logo.jpg, id=34, 454.69875pt x 116.68594pt>
 File: Img/logo.jpg Graphic file (type jpg)
  <use Img/logo.jpg>
 Package pdftex.def Info: Img/logo.jpg used on input line 84.
@@ -981,381 +977,140 @@ Package babel Info: Redefining danish shorthand "~
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 111.
+(babel)             in language  on input line 112.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 111.
-
-
-LaTeX Warning: File `Img/tidsplot.PNG' not found on input line 116.
-
-
-! Package pdftex.def Error: File `Img/tidsplot.PNG' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.116 ...phics[width=\textwidth]{Img/tidsplot.PNG}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+(babel)             in language  on input line 112.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 121.
+(babel)             in language  on input line 114.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 121.
+(babel)             in language  on input line 114.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 121.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 121.
-[3]
-
-LaTeX Warning: File `Img/amplitude.PNG' not found on input line 124.
+(babel)             in language  on input line 117.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 121.
 
 
-! Package pdftex.def Error: File `Img/amplitude.PNG' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.124 ...hics[width=\textwidth]{Img/amplitude.PNG}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 129.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 129.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 129.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 129.
-[4]
-
-LaTeX Warning: File `Img/spektogram.png' not found on input line 133.
-
-
-! Package pdftex.def Error: File `Img/spektogram.png' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.133 ...ics[width=\textwidth]{Img/spektogram.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 138.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 138.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 138.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 138.
-[5]
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 138.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 138.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 138.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 138.
- [6]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 141.
-
- ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 142.
 
+Package Listings Warning: Text dropped after begin of listing on input line 121
+.
+
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 123.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ts1pcr.fd"
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
+
+ []
+
+<Img/Histogram_load_L.png, id=67, 421.575pt x 316.18124pt>
+File: Img/Histogram_load_L.png Graphic file (type png)
+
+<use Img/Histogram_load_L.png>
+Package pdftex.def Info: Img/Histogram_load_L.png used on input line 131.
+(pdftex.def)             Requested size: 256.0748pt x 192.05975pt.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 138.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 145.
+(babel)             in language  on input line 138.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 146.
+(babel)             in language  on input line 138.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 146.
+(babel)             in language  on input line 138.
+ [3 <./Img/Histogram_load_L.png (PNG copy)>]
+<Img/Histogram_noload_L.png, id=78, 421.575pt x 316.18124pt>
+File: Img/Histogram_noload_L.png Graphic file (type png)
 
+<use Img/Histogram_noload_L.png>
+Package pdftex.def Info: Img/Histogram_noload_L.png used on input line 141.
+(pdftex.def)             Requested size: 256.0748pt x 192.05975pt.
 
-LaTeX Warning: File `Img/pol-nul.PNG' not found on input line 156.
+<Img/Histogram_load_50.png, id=80, 421.575pt x 316.18124pt>
+File: Img/Histogram_load_50.png Graphic file (type png)
 
+<use Img/Histogram_load_50.png>
+Package pdftex.def Info: Img/Histogram_load_50.png used on input line 151.
+(pdftex.def)             Requested size: 256.0748pt x 192.05975pt.
 
-! Package pdftex.def Error: File `Img/pol-nul.PNG' not found.
+Underfull \hbox (badness 10000) in paragraph at lines 157--159
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.156 ...aphics[width=\textwidth]{Img/pol-nul.PNG}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 161.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 161.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 161.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 161.
-[7]
-
-LaTeX Warning: File `Img/udregn1.PNG' not found on input line 166.
-
-
-! Package pdftex.def Error: File `Img/udregn1.PNG' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.166 ...aphics[width=\textwidth]{Img/udregn1.PNG}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 171.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 171.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 171.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 171.
-[8]
-
-LaTeX Warning: File `Img/udregn2.PNG' not found on input line 176.
-
-
-! Package pdftex.def Error: File `Img/udregn2.PNG' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.176 ...aphics[width=\textwidth]{Img/udregn2.PNG}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 181.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 181.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 181.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 181.
-[9]
-
-LaTeX Warning: File `Img/timsSuperFlotteSignalgraf.PNG' not found on input line
- 186.
-
-
-! Package pdftex.def Error: File `Img/timsSuperFlotteSignalgraf.PNG' not found.
-
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.186 ...width]{Img/timsSuperFlotteSignalgraf.PNG}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 191.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 191.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 191.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 191.
-[10]
-
-LaTeX Warning: File `Img/filterkarakteristik.PNG' not found on input line 196.
-
-
-! Package pdftex.def Error: File `Img/filterkarakteristik.PNG' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.196 ...=\textwidth]{Img/filterkarakteristik.PNG}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 201.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 201.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 201.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 201.
-[11]
-
-LaTeX Warning: File `Img/udenfilter.PNG' not found on input line 206.
-
-
-! Package pdftex.def Error: File `Img/udenfilter.PNG' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.206 ...ics[width=\textwidth]{Img/udenfilter.PNG}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 211.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 211.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 211.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 211.
-[12]
-
-LaTeX Warning: File `Img/medfilter.PNG' not found on input line 214.
-
-
-! Package pdftex.def Error: File `Img/medfilter.PNG' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.214 ...hics[width=\textwidth]{Img/medfilter.PNG}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 219.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 219.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 219.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 219.
-[13]
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 220.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 220.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\ucs\uni-32.def"
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 225.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 225.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 225.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 225.
- [14]
-LaTeX Font Info:    Try loading font information for OML+pcr on input line 231.
-
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omlpcr.fd"
-File: omlpcr.fd 
-)
-LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 231.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 240.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 240.
-Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 240.
-Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 240.
- [15]
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 243.
-
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omspcr.fd"
-File: omspcr.fd 
-)
-LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 243.
-
-Overfull \hbox (160.25139pt too wide) in paragraph at lines 250--251
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][] 
  []
 
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 159.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 262.
+(babel)             in language  on input line 159.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 286.
+(babel)             in language  on input line 159.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 286.
+(babel)             in language  on input line 159.
+[4 <./Img/Histogram_noload_L.png (PNG copy)> <./Img/Histogram_load_50.png (PNG 
+copy)>]
+
+Package Listings Warning: Text dropped after begin of listing on input line 162
+.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
+
+ []
+
+
+Package Listings Warning: Text dropped after begin of listing on input line 176
+.
+
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 289.
+(babel)             in language  on input line 181.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 289.
+(babel)             in language  on input line 181.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 289.
+(babel)             in language  on input line 184.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 289.
-[16]
+(babel)             in language  on input line 184.
 Package babel Info: Redefining danish shorthand "|
-(babel)             in language  on input line 291.
+(babel)             in language  on input line 186.
 Package babel Info: Redefining danish shorthand "~
-(babel)             in language  on input line 291.
-
-
-! Package Listings Error: File `case2opg1_verC(.m)' not found.
-
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: m)
-
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.293 \lstinputlisting{case2opg1_verC.m}
-                                        
-*** (cannot \read from terminal in nonstop modes)
-
- 
+(babel)             in language  on input line 186.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 188.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 188.
+Package babel Info: Redefining danish shorthand "|
+(babel)             in language  on input line 188.
+Package babel Info: Redefining danish shorthand "~
+(babel)             in language  on input line 188.
+[5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 188.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 188.
+ (Case3.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 188.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 188.
+Package rerunfilecheck Info: File `Case3.out' has not changed.
+(rerunfilecheck)             Checksum: 09B2C87020C902E12765B262E2772381;387.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 188.
+ ) 
 Here is how much of TeX's memory you used:
- 22520 strings out of 493333
- 394927 string characters out of 3139194
- 584646 words of memory out of 3000000
- 25556 multiletter control sequences out of 15000+200000
- 14380 words of font info for 51 fonts, out of 3000000 for 9000
+ 22176 strings out of 493333
+ 391063 string characters out of 3139194
+ 577381 words of memory out of 3000000
+ 25272 multiletter control sequences out of 15000+200000
+ 14211 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,7n,92p,592b,1331s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 62i,6n,92p,524b,1398s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pf
+b>
+Output written on Case3.pdf (6 pages, 151235 bytes).
+PDF statistics:
+ 126 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+
