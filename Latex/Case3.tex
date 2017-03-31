@@ -178,7 +178,59 @@ maxKoef = fs*0.1;
 \end{lstlisting}
 
 Dette giver os et filter med en orden på 30. 
+
 \subsection{Eksponentielt midlingsfilter}
+Vi forsøgte også at lege med et eksponentielt midlingsfilter. Dette midlingsfilter bruger et
+simpelt IIR lavpasfilter beskrevet af differensligningen:
+\[ y(n)= \alpha \cdot x(n)+(1-\alpha)\cdot y(n-1) \]
+Denne type filter er ofte brugt pga dens fordele, som fx at den kræver færre beregninger per output-sample end et standard midlingsfilter, og dens stærkt reduceret hukommelses brug, idet den kun indeholder et forsinkelse element $y(n-1)$, som skal gemmes i en hukommelsesplads i fx. et embedded system. De nyeste samples $x(n)$ får også størst betydning i outputtet $y(n)$, hvilket betyder at filteret reagerer hurtigere på ændringer i input $x(n)$ et standard midlingsfilter. 
+\newline
+$\alpha$ er en midlingsfaktor mellem 0 og 1 som bestemmer støjreduktionen i forhold til responstiden. Vi prøvede med en lille værdi af $\alpha$ i vores midlingsfilter, hvilket gav en god støjreduktionen men langsom responstid, omvendt prøvede vi også med en høj værdi af $\alpha$ i vores midlingsfilter, hvilket gav en mindre støjreduktionen, men hurtigere responstid. Så præcis som med det alm midlingsfilter er der et trade off mellem støjreduktionen og responstid.
+\newline
+$\alpha$ bestemmes ved:
+\[ \alpha = \dfrac{2}{R+1} \]
+Hvor R er den faktor som støj variensen bliver reduceret. Vi kan sammenligne den eksponentiele midlingsfilters reduktion i støjeffekten direkte med et linært midlingfilters reduktion ved at opskrive:
+\[ \alpha = \dfrac{2}{N+1}\]
+Hvor N er antal af FIR midlings koeficienter, når $N>3$. Dette har vi prøvet at vise midligning for et eksponentielt midlingsfilter med $N=10$ stemmer nogenlunde med midlingen fra et $N=10$ point linært midlingsfilter fra før. De nye midlinger eksponentielt midlingsfiltere kan ses i \autoref{fig:histogram4} og \autoref{fig:histogram5}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=90mm]{Img/Histogram_load_ex10.png}
+	\caption{Histogram af load med og uden eksponentielt filter. N = 10}
+	% \floatfoot{Source: (Citation command)}
+	\label{fig:histogram4}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=90mm]{Img/Histogram_noload_ex10.png}
+	\caption{Histogram af noload med og uden eksponentielt filter. N = 10}
+	% \floatfoot{Source: (Citation command)}
+	\label{fig:histogram5}
+\end{figure}
+
+Som man kan se minder midlingen  for et eksponentielt midlingsfilter i \autoref{fig:histogram4} og \autoref{fig:histogram5} med med midlingen fra de linære midlingsfilter fra før i \autoref{fig:histogram1} og \autoref{fig:histogram2}
+\newline
+Den store forskel er deres respons på fx. et step som kan ses i \autoref{fig:respons1} og \autoref{fig:respons2}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=90mm]{Img/respons_alm.png}
+	\caption{Linært midlingsfilter respons på step ved M=10.}
+	% \floatfoot{Source: (Citation command)}
+	\label{fig:respons1}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=90mm]{Img/respons_ex.png}
+	\caption{Ekspontielt midlingsfilter respons på step ved N=10.}
+	% \floatfoot{Source: (Citation command)}
+	\label{fig:respons2}
+\end{figure}
+Som det kan ses i \autoref{fig:respons1} og \autoref{fig:respons2}, Så er reagerer det eksponentielle midlingsfilter hurtigere på steppet end det linære midlingsfilter, dog indhentes forspringet fra det eksponentielle midlingsfilter, idet det aldrig kan ramme slutværdien præcis, men blot komme uendelig tæt på. Alligevel tager det ca dobbelt så mange samples for det eksponentielle midlingsfilter at nå til næsten slutværdiden i forhold til det linære filter som når slutværdien efter dens 10 kofficenter er kørt igemme signalet. Dette skyldes at eksponentielle midlingsfilter er et IIR filter som jo har uendeligt respons på et siganal.
 
 
 \section{Opgave 3}

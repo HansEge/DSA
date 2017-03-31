@@ -2,3 +2,7 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Histogram af load med og uden filter. Filterorden = 10}}{3}{figure.1}
 \contentsline {figure}{\numberline {2}{\ignorespaces Histogram af noload med og uden filter. Filterorden = 10}}{4}{figure.2}
 \contentsline {figure}{\numberline {3}{\ignorespaces Histogram af load med og uden filter. Filterorden = 50}}{4}{figure.3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Histogram af load med og uden eksponentielt filter. N = 10}}{6}{figure.4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Histogram af noload med og uden eksponentielt filter. N = 10}}{6}{figure.5}
+\contentsline {figure}{\numberline {6}{\ignorespaces Lin\IeC {\ae }rt midlingsfilter respons p\IeC {\r a} step ved M=10.}}{7}{figure.6}
+\contentsline {figure}{\numberline {7}{\ignorespaces Ekspontielt midlingsfilter respons p\IeC {\r a} step ved N=10.}}{7}{figure.7}
