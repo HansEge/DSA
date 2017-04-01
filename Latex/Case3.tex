@@ -104,17 +104,81 @@
 
 \section{Problem beskrivelse}
 \begin{flushleft}
-	
-	
-	Denne case omhandler måden at forbedre et støjfyldt signal med et midlingsfilter. Dette filter skal midle et signal fra en vægt. Typisk vil signalet fra vægten svinge voldsomt som vil gøre det svært at måle korrekt. Midlingsfilteret vil gøre det muligt at få en pålidelig måling. Filteret er realiseret ved hjælp af matlab og vægt data er importeret ind i matlab og testet i dette miljø.
+		Denne case omhandler måden at forbedre et støjfyldt signal med et midlingsfilter. Dette filter skal midle et signal fra en vægt. Typisk vil signalet fra vægten svinge voldsomt som vil gøre det svært at måle korrekt. Midlingsfilteret vil gøre det muligt at få en pålidelig måling. Filteret er realiseret ved hjælp af matlab og vægt data er importeret ind i matlab og testet i dette miljø.
 \end{flushleft}
 
-\section{Opgave 1}
+\section{Opgave 1 - Data analyse}
+Ved data analysen er det udleverede materiale blevet plottet som en sample tidsakse. Dette viser at vores signal har et område med og uden vægt på. 
 
-\section{Opgave 2}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=90mm]{Img/sample_akse.png}
+	\caption{Sample akse for hele signalet}
+	% \floatfoot{Source: (Citation command)}
+	\label{fig:sample_akse}
+\end{figure}
+
+på figur \ref{fig:sample_akse} kan mas se den belastede og ubelasede del af signalet. Da dataen skal bruges i et midlingsfilter undlader vi at bruge de samples der ligger i ændringen, da signalet først skal falde til ro. Derfor får vi to signaler der bliver kørt filtre på. Henholdsvis et load signal og noload signal. \\
+Hvis dataen fra load og unload signalet plottes på et histogram kan man se hvordan dataen er normalfordelt. Hvis man udregner varians og spredning, får vi spredningen til ca 30. Det passer fint overens med histogrammerne.
+
+\begin{lstlisting}[frame=single]  % Start your code-block
+for i:=maxint to 0 do
+%Varians
+noload_var = (1/size(noload,2))*sum((noload-noload_avg).^2);
+load_var = (1/size(load,2))*sum((load-load_avg).^2);
+
+%Spredning
+noload_spred = sqrt(noload_var);
+load_spred = sqrt(load_var);
+\end{lstlisting}
+
+Dette passer fint overens med histogrammerne på figur \ref{fig:histogram1} og \ref{fig:histogram2}.
+
+Hvis vi plotter load og noload i effekt-spektret kan man se at det ligner hvid støj, dog med en enkelt spike ved DC.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=90mm]{Img/noload_effekt.png}
+	\caption{Effekt-spektrum for noload}
+	% \floatfoot{Source: (Citation command)}
+	\label{fig:effekt_noload}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=90mm]{Img/noload_effekt.png}
+	\caption{Effekt-spektrum for load}
+	% \floatfoot{Source: (Citation command)}
+	\label{fig:effekt_load}
+\end{figure}
+
+For at finde afstenden mellem hver bit-niveau i gram, laver vi følgenede udregning.
+
+\begin{lstlisting}[frame=single]  % Start your code-block
+for i:=maxint to 0 do
+LSB_value = 1000/valueDiff
+\end{lstlisting}
+
+Dette giver os en LSB værdi på 3.3.
+
+\section{Opgave 2 - Design af midlingsfilter}
 Det kommende afsnit kommer til at omhandle hvordan midlingsfilteret virker og hvordan det er implementeret. Filteret er blevet testet på dataen fra opgave 1. Vi har ekspermenteret med både lineært og eksponentielt midlingsfilter. 
 
 \subsection{Lineært midlingsfilter}
+Det lineære midlingsfilter fungerer ved løbende at tage M inputværdier og dividerer dem med M. Differensligningen for dette ser sådan ud:
+
+\[ y(n)= (1/M)(x(n)+x(n-1)+...+x(n-M+1))\]
+
+Der er en indsvingningstid for filteret, da de første M værdier ikke passer overens med signalet. Det vil sige at de første M samples i filter outputtet bliver lavere. Dette kaldes indsvingningstiden. Dette kan ses på figur \ref{fig:stem_fir}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=90mm]{Img/respons_alm.png}
+	\caption{Histogram af load med og uden filter. Filterorden = 10}
+	% \floatfoot{Source: (Citation command)}
+	\label{fig:stem_fir}
+\end{figure}
+
 For at midle data fra opgave 1, lavede vi først et lineært midlingsfilter. Dette er gjort på følgende måde:
 
 \begin{lstlisting}[frame=single]  % Start your code-block
@@ -129,7 +193,7 @@ Da dataen fra opgave 1 viser at der både er en load og noload, er filteret påf
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=90mm]{Img/Histogram_load_L.png}
-	\caption{Histogram af load med og uden filter. Filterorden = 10}
+	\caption{Filter respons for det lineære midlingsfilter}
 	% \floatfoot{Source: (Citation command)}
 	\label{fig:histogram1}
 \end{figure}
@@ -156,7 +220,6 @@ Ved at ændre på ordnen kan man få filtret til at midle kraftigere. Dette kan 
 
 Det ses tydligt at de orange pinde er blevet smallere og fylder et mindre område på grafen.\\
 Hvis man kigger på varians og spredning kan man se at de stemmer godt overens med vores grafer. \\
-\newpage
 
 \begin{lstlisting}[frame=single]  % Start your code-block
 for i:=maxint to 0 do
@@ -178,6 +241,7 @@ maxKoef = fs*0.1;
 \end{lstlisting}
 
 Dette giver os et filter med en orden på 30. 
+\newpage
 
 \subsection{Eksponentielt midlingsfilter}
 Vi forsøgte også at lege med et eksponentielt midlingsfilter. Dette midlingsfilter bruger et
@@ -233,7 +297,7 @@ Den store forskel er deres respons på fx. et step som kan ses i \autoref{fig:re
 Som det kan ses i \autoref{fig:respons1} og \autoref{fig:respons2}, Så er reagerer det eksponentielle midlingsfilter hurtigere på steppet end det linære midlingsfilter, dog indhentes forspringet fra det eksponentielle midlingsfilter, idet det aldrig kan ramme slutværdien præcis, men blot komme uendelig tæt på. Alligevel tager det ca dobbelt så mange samples for det eksponentielle midlingsfilter at nå til næsten slutværdiden i forhold til det linære filter som når slutværdien efter dens 10 kofficenter er kørt igemme signalet. Dette skyldes at eksponentielle midlingsfilter er et IIR filter som jo har uendeligt respons på et siganal.
 
 
-\section{Opgave 3}
+\section{Opgave 3 - System overvejelser}
 
 \section{Matlab kode}	
 
