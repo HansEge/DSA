@@ -1,8 +1,8 @@
 \select@language {danish}
 \contentsline {section}{\numberline {1}Problem beskrivelse}{3}{section.1}
 \contentsline {section}{\numberline {2}Opgave 1 - Data analyse}{3}{section.2}
-\contentsline {section}{\numberline {3}Opgave 2 - Design af midlingsfilter}{4}{section.3}
+\contentsline {section}{\numberline {3}Opgave 2 - Design af midlingsfilter}{5}{section.3}
 \contentsline {subsection}{\numberline {3.1}Line\IeC {\ae }rt midlingsfilter}{5}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Eksponentielt midlingsfilter}{8}{subsection.3.2}
-\contentsline {section}{\numberline {4}Opgave 3 - System overvejelser}{10}{section.4}
-\contentsline {section}{\numberline {5}Matlab kode}{10}{section.5}
+\contentsline {section}{\numberline {4}Opgave 3 - System overvejelser}{11}{section.4}
+\contentsline {section}{\numberline {5}Matlab kode}{11}{section.5}

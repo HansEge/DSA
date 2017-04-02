@@ -52,7 +52,7 @@
 %----------------------------------------------------------------------------------------
 
 \HRule \\[0.4cm]
-{ \huge \bfseries DSA Case 2}\\ % Title of your document
+{ \huge \bfseries DSA Case 3}\\ % Title of your document
 \HRule \\[1cm]
  
 %----------------------------------------------------------------------------------------
@@ -121,8 +121,7 @@ Ved data analysen er det udleverede materiale blevet plottet som en sample tidsa
 på figur \ref{fig:sample_akse} kan mas se den belastede og ubelasede del af signalet. Da dataen skal bruges i et midlingsfilter undlader vi at bruge de samples der ligger i ændringen, da signalet først skal falde til ro. Derfor får vi to signaler der bliver kørt filtre på. Henholdsvis et load signal og noload signal. \\
 Hvis dataen fra load og unload signalet plottes på et histogram kan man se hvordan dataen er normalfordelt. Hvis man udregner varians og spredning, får vi spredningen til ca 30. Det passer fint overens med histogrammerne.
 
-\begin{lstlisting}[frame=single]  % Start your code-block
-for i:=maxint to 0 do
+\begin{lstlisting}[frame=single]
 %Varians
 noload_var = (1/size(noload,2))*sum((noload-noload_avg).^2);
 load_var = (1/size(load,2))*sum((load-load_avg).^2);
@@ -146,7 +145,7 @@ Hvis vi plotter load og noload i effekt-spektret kan man se at det ligner hvid s
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=90mm]{Img/noload_effekt.png}
+	\includegraphics[width=90mm]{Img/load_effekt.png}
 	\caption{Effekt-spektrum for load}
 	% \floatfoot{Source: (Citation command)}
 	\label{fig:effekt_load}
@@ -154,12 +153,14 @@ Hvis vi plotter load og noload i effekt-spektret kan man se at det ligner hvid s
 
 For at finde afstenden mellem hver bit-niveau i gram, laver vi følgenede udregning.
 
-\begin{lstlisting}[frame=single]  % Start your code-block
-for i:=maxint to 0 do
+\begin{lstlisting}[frame=single] 
+valueDiff = load_avg - noload_avg;
+%Vaerdien svarer til en aendring paa 1000gram. Saa kan man udregne hvor mange
+%gram en LSB svarer til.
 LSB_value = 1000/valueDiff
 \end{lstlisting}
 
-Dette giver os en LSB værdi på 3.3.
+Dette giver os en LSB værdi på 3.3 gram/bit.
 
 \section{Opgave 2 - Design af midlingsfilter}
 Det kommende afsnit kommer til at omhandle hvordan midlingsfilteret virker og hvordan det er implementeret. Filteret er blevet testet på dataen fra opgave 1. Vi har ekspermenteret med både lineært og eksponentielt midlingsfilter. 
@@ -181,8 +182,7 @@ Der er en indsvingningstid for filteret, da de første M værdier ikke passer ov
 
 For at midle data fra opgave 1, lavede vi først et lineært midlingsfilter. Dette er gjort på følgende måde:
 
-\begin{lstlisting}[frame=single]  % Start your code-block
-for i:=maxint to 0 do
+\begin{lstlisting}[frame=single]  
 M = 10;
 h1 = 1/M * ones(1, M);
 \end{lstlisting}
@@ -221,9 +221,7 @@ Ved at ændre på ordnen kan man få filtret til at midle kraftigere. Dette kan 
 Det ses tydligt at de orange pinde er blevet smallere og fylder et mindre område på grafen.\\
 Hvis man kigger på varians og spredning kan man se at de stemmer godt overens med vores grafer. \\
 
-\begin{lstlisting}[frame=single]  % Start your code-block
-for i:=maxint to 0 do
-
+\begin{lstlisting}[frame=single]  
 var_load = var(y_load)
 var_noload = var(y_noload)
 
@@ -235,8 +233,7 @@ Ved M = 10 får vi en varians på ca 90, mod en varians på ca 25 ved en orden p
 
 Hvis man ønsker en max svingningstid for sit system, bliver man muligvis nødt til at begrænse sin orden på filteret. Hvis vi har et krav om en indsvingningstid på 100ms kan vi lave en hurtigt udregning:
 
-\begin{lstlisting}[frame=single]  % Start your code-block
-for i:=maxint to 0 do
+\begin{lstlisting}[frame=single] 
 maxKoef = fs*0.1;
 \end{lstlisting}
 
@@ -249,7 +246,7 @@ simpelt IIR lavpasfilter beskrevet af differensligningen:
 \[ y(n)= \alpha \cdot x(n)+(1-\alpha)\cdot y(n-1) \]
 Denne type filter er ofte brugt pga dens fordele, som fx at den kræver færre beregninger per output-sample end et standard midlingsfilter, og dens stærkt reduceret hukommelses brug, idet den kun indeholder et forsinkelse element $y(n-1)$, som skal gemmes i en hukommelsesplads i fx. et embedded system. De nyeste samples $x(n)$ får også størst betydning i outputtet $y(n)$, hvilket betyder at filteret reagerer hurtigere på ændringer i input $x(n)$ et standard midlingsfilter. 
 \newline
-$\alpha$ er en midlingsfaktor mellem 0 og 1 som bestemmer støjreduktionen i forhold til responstiden. Vi prøvede med en lille værdi af $\alpha$ i vores midlingsfilter, hvilket gav en god støjreduktionen men langsom responstid, omvendt prøvede vi også med en høj værdi af $\alpha$ i vores midlingsfilter, hvilket gav en mindre støjreduktionen, men hurtigere responstid. Så præcis som med det alm midlingsfilter er der et trade off mellem støjreduktionen og responstid.
+$\alpha$ er en midlingsfaktor mellem 0 og 1 som bestemmer støjreduktionen i forhold til responstiden. Vi prøvede med en lille værdi af $\alpha$ i vores midlingsfilter, hvilket gav en god støjreduktionen men langsom responstid/indsvingningstid, omvendt prøvede vi også med en høj værdi af $\alpha$ i vores midlingsfilter, hvilket gav en mindre støjreduktionen, men hurtigere responstid. Så præcis som med det alm midlingsfilter er der et trade off mellem støjreduktionen og responstid.
 \newline
 $\alpha$ bestemmes ved:
 \[ \alpha = \dfrac{2}{R+1} \]
@@ -295,10 +292,50 @@ Den store forskel er deres respons på fx. et step som kan ses i \autoref{fig:re
 	\label{fig:respons2}
 \end{figure}
 Som det kan ses i \autoref{fig:respons1} og \autoref{fig:respons2}, Så er reagerer det eksponentielle midlingsfilter hurtigere på steppet end det linære midlingsfilter, dog indhentes forspringet fra det eksponentielle midlingsfilter, idet det aldrig kan ramme slutværdien præcis, men blot komme uendelig tæt på. Alligevel tager det ca dobbelt så mange samples for det eksponentielle midlingsfilter at nå til næsten slutværdiden i forhold til det linære filter som når slutværdien efter dens 10 kofficenter er kørt igemme signalet. Dette skyldes at eksponentielle midlingsfilter er et IIR filter som jo har uendeligt respons på et siganal.
+\newline
+Selve det eksponentielle midlingsfilter er jo  implementeret som et IIR lavpassfilter. Dette sker ud fra en omskriving af differensligningen fra før til en overføringsfunktion i z domænet:
+\[ Y(z)=\alpha \cdot X(z)+(1-\alpha)\cdot Y(z) \cdot z^{-1}\]
+\[ Y(z)\cdot (1-(1-\alpha)\cdot z^{-1})=\alpha \cdot X(z)\]
+\[H(z)=\dfrac{Y(z)}{X(z)}\]
+\[H(z)=\dfrac{\alpha}{1-(1-\alpha)\cdot z^{-1}}\]
+\[H(z)=\dfrac{\alpha \cdot z}{z-(1-\alpha)}\]
+\newline
+Dette giver os nogle poler og nulpunkter vi kan bruge til at finde IIR filterkofficenterne b og a med i følgede mathlab kode:
 
+\begin{lstlisting}[frame=single] 
+TOP = alpha*z;
+Zeros = roots([alpha*1]);
+BOTTOM = (z-(1-alpha));
+Poles = roots([1 -(1-alpha)]);
+Gain=alpha;
+[b,a] = zp2tf(Zeros,Poles,Gain);
+\end{lstlisting}
 
 \section{Opgave 3 - System overvejelser}
+Vi vil gerne bestemme hvor mange betydende cifre kan vi medtage i et display, hvis det skal vise vægt i kg (op til fx. 5 kg) og hvis støjens spredning (=kvadrat af varians)skal ligge på under 1/10 af værdien af det mindst betydende ciffer i displayet. Dette gøres først ved at vi lader vores data gå igennem midlingsfilteret og måler derefter
+spredning på både load og noload. Den største spredning ganger vi med den LSB værdi vi fandt i opg 1.
 
-\section{Matlab kode}	
+\begin{lstlisting}[frame=single] 
+LSB_value = 3.3378;
+noload_filter_spred = 9.2346;
+load_filter_spred = 9.7045;
+%Der er stoerst spredning ved load
+fejlgram = LSB_value * load_filter_spred;
+\end{lstlisting}
+Dette giver en fejl på ca. 32gram.Det vil sige at 68\% af værdierne svinger med 32 gram.Vi vil gerne have en sikkerhedsmargen på 1/10, så fejlgram skal ganges med 10.
+
+\begin{lstlisting}[frame=single] 
+fejlgram10 = fejlgram * 10;
+\end{lstlisting}
+Dette giver nu en fejl på ca. 324gram. Det vil sige at der kan være en fejl på op til 324 gram i målingen hvis vi vil have en sikkerhedsmargen på 1/10 af den reelle fejl for 68\% af værdierne. Måleren kan altså stå og svinge med værdier på 324 gram eller under.Vores LSB skal altså være i hele kg, hvormed vægten ikke er særlig smart, idet den jo kun viser vægt op til 5 kg, og derfor kun har et cifre på displayet.
+
+
+
+
+
+
+
+\section{Matlab kode}
+	
 
 \end{document}
